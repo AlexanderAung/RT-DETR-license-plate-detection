@@ -1,6 +1,6 @@
 __include__:
   [
-    "../dataset/coco_detection.yml",
+    "../dataset/license_plate.yml",
     "../runtime.yml",
     "./include/dataloader.yml",
     "./include/optimizer.yml",
@@ -23,7 +23,7 @@ HybridEncoder:
 RTDETRTransformerv2:
   num_layers: 3
 
-epoches: 120
+epoches: 50
 
 optimizer:
   type: AdamW
