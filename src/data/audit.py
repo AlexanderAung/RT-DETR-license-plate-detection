@@ -550,15 +550,15 @@ class LicensePlateDatasetAuditor:
 if __name__ == "__main__":
     # CONFIGURE THESE PATHS
     IMAGE_DIR = "data/raw/train"
-    ANNOTATION_PATH = "data/raw/annotations/train_annotations.coco.json"
+    ANNOTATION_PATH = "data/annotations/train_annotations.json"
     
     # If you have train/val/test splits already:
-    '''
+    
     SPLIT_FILES = {
         # 'train': 'data/raw/annotations/instances_train.json',
         # 'val': 'data/raw/annotations/instances_val.json',
     }
-    '''
+    
     
     auditor = LicensePlateDatasetAuditor(IMAGE_DIR, ANNOTATION_PATH)
-    #auditor.run_full_audit(split_files=SPLIT_FILES if SPLIT_FILES else None)
+    auditor.run_full_audit(split_files=SPLIT_FILES if SPLIT_FILES else None)
