@@ -1,22 +1,23 @@
 """
 Dataset Audit Script for License Plate Detection
 """
-import json
 import hashlib
+import json
 import os
-from pathlib import Path
-from collections import defaultdict, Counter
-from typing import Dict, List, Tuple, Optional
+import re
 import warnings
+from collections import Counter, defaultdict
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
 
 import cv2
+import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
-import matplotlib.pyplot as plt
 from tqdm import tqdm
 
-
 class LicensePlateDatasetAuditor:
+    
     def __init__(self, image_dir: str, annotation_path: str, output_dir: str = "reports/audit"):
         self.image_dir = Path(image_dir)
         self.annotation_path = Path(annotation_path)
@@ -235,7 +236,7 @@ class LicensePlateDatasetAuditor:
     def _detect_sequential_frames(self) -> List[List[str]]:
         """Detect filename patterns like frame_0001.jpg, frame_0002.jpg."""
         from itertools import groupby
-        import re
+       
         
         sequences = []
         files = sorted(self.images.values(), key=lambda x: x['file_name'])
