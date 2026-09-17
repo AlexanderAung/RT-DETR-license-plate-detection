@@ -4,6 +4,11 @@
 /reports/deleted_backup_20260915_212721
 /reports/deleted_empty_20260915_213446
 
+# 
+src/data/audit_more.py
+src/data/select_10k.py
+
+
 # uv lock 
 uv.lock 
 
